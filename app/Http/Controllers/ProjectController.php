@@ -16,7 +16,7 @@ class ProjectController extends Controller
                             }])
                             ->get();
 
-        return $projects->json();
+        return $projects->ToJSON();
    }
 
    // Saving a new project
@@ -40,14 +40,14 @@ class ProjectController extends Controller
             $query->where('is_completed', false);
         }])->find($id);
 
-        return $project->json();
+        return $project->ToJSON();
    }
 
    // Updating a project
    public function markAsCompleted(Project $project){
        $project->is_completed = true;
        $project->update();
-
+       
        return response()->json('Project updated successfully');
    }
 }
