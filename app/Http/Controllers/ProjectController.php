@@ -9,14 +9,20 @@ class ProjectController extends Controller
 {
     // Getting all projects
    public function index(){
-        $projects = Project::where('is_completed', 'false')
-                            ->orderBy('created_at', 'DESC')
-                            ->withCount(['tasks' => function ($query) {
-                                $query->where('is_completed',false);
-                            }])
-                            ->get();
+        // $projects = Project::where('is_completed', false)
+        // ->orderBy('created_at', 'desc')
+        // ->withCount(['tasks' => function ($query) {
+        // $query->where('is_completed', false);
+        // }])
+        // ->get();
 
-        return $projects->ToJSON();
+        // return $projects->toJson();
+        // $project = Project::all()->withCount(['tasks' => function($query){
+        //     $query->where('is_completed',false);
+        // }]);
+
+        $project = Project::all();
+        return $project;
    }
 
    // Saving a new project
@@ -40,7 +46,7 @@ class ProjectController extends Controller
             $query->where('is_completed', false);
         }])->find($id);
 
-        return $project->ToJSON();
+        return $project->toJson();
    }
 
    // Updating a project
