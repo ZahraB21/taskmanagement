@@ -9,20 +9,15 @@ class ProjectController extends Controller
 {
     // Getting all projects
    public function index(){
-        // $projects = Project::where('is_completed', false)
-        // ->orderBy('created_at', 'desc')
-        // ->withCount(['tasks' => function ($query) {
-        // $query->where('is_completed', false);
-        // }])
-        // ->get();
+        $projects = Project::where('is_completed', false)
+        ->orderBy('created_at', 'desc')
+        ->withCount(['tasks' => function ($query) {
+        $query->where('is_completed', false);
+        }])
+        ->get();
 
-        // return $projects->toJson();
-        // $project = Project::all()->withCount(['tasks' => function($query){
-        //     $query->where('is_completed',false);
-        // }]);
-
-        $project = Project::all();
-        return $project;
+        return $projects->toJson();
+    
    }
 
    // Saving a new project
