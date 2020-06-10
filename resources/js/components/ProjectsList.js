@@ -25,14 +25,22 @@ class ProjectsList extends Component {
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
-                            <div className="card-header">All projects</div>
+                            <div className="card-header">
+                                <div className="row">
+                                    <div className="col-6 text-center">
+                                        All projects
+                                    </div>
+                                    <div className="col-6 justify-content-end text-center mb-0">
+                                        <Link
+                                            className="btn btn-primary btn-sm"
+                                            to="/create"
+                                        >
+                                            Create new project
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="card-body">
-                                <Link
-                                    className="btn btn-primary btn-sm mb-3"
-                                    to="/create"
-                                >
-                                    Create new project
-                                </Link>
                                 <ul className="list-group list-group-flush">
                                     {projects.map(project => (
                                         <Link
