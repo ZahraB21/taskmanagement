@@ -25,8 +25,8 @@ class ProjectsList extends Component {
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
-                            <div className="card-header">
-                                <div className="row">
+                            <div className="card-header bg-dark text-light">
+                                <div className="row justify-content-center align-items-center">
                                     <div className="col-6 text-center">
                                         <h2>All projects</h2>
                                     </div>
