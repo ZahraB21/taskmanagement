@@ -41,7 +41,7 @@ class ProjectsList extends Component {
                                 </div>
                             </div>
                             <div className="card-body p-0">
-                                <div className="row bg-dark text-light p-2 m-0">
+                                <div className="row bg-secondary text-success p-2 m-0">
                                     <div className="col-6 text-left">
                                         Project Names
                                     </div>
